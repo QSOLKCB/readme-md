@@ -75,4 +75,71 @@ numpy==1.26.4
 **QSOLKCB: Much wow, such secure, very prank. Join the meme void.** 😎🔮🐶  
 *Powered by EmergentMonk & the #fcukscammers collective. Last updated: October 18, 2025.*
 
+🧰 Python Virtual Environment Setup (Arch Linux)
+
+This project uses an isolated Python environment to prevent conflicts with system packages.
+Follow the steps below to set up and activate a virtual environment for development.
+
+1. Install the Virtual Environment Tools
+
+Arch Linux protects its system-wide Python environment.
+Use pacman to install the official python-virtualenv package and dependencies:
+
+sudo pacman -S python-virtualenv
+
+
+Expected output:
+
+Packages (3) python-distlib ... python-platformdirs ... python-virtualenv ...
+:: Proceed with installation? [Y/n] Y
+
+
+Once installed, Arch will arm ConditionNeedsUpdate automatically.
+
+2. Create a Virtual Environment
+
+Inside your project directory (for example, QEC/):
+
+python -m venv venv
+
+
+This creates a folder named venv/ containing an isolated Python interpreter and package manager.
+
+3. Activate the Environment
+
+Activate the virtual environment before installing any packages:
+
+source venv/bin/activate
+
+
+Your shell prompt should now show the active environment:
+
+(venv) [trent@archlinux QEC]$
+
+4. Install Project Dependencies
+
+With the environment active, install all required Python modules:
+
+pip install -r requirements.txt
+
+
+All dependencies will be installed locally inside venv/, keeping your system Python untouched.
+
+5. (Optional) Deactivate When Finished
+
+To exit the virtual environment:
+
+deactivate
+
+
+Summary
+
+sudo pacman -S python-virtualenv
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+
+This workflow ensures full project isolation and prevents PEP 668: externally-managed-environment errors.
+
 ---
